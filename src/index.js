@@ -2,11 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import { MyComponent } from "./tutorial";
+import { Tutorial } from "./Tutorial";
 
 ReactDOM.render(
   <React.StrictMode>
-    <MyComponent />
+    <Tutorial />
   </React.StrictMode>,
   document.getElementById("root")
 );

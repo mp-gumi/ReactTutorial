@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export const MyComponent = () => {
+export const Tutorial = () => {
   const [count, setCount] = useState(0);
   //useStateは、クラスや関数内で宣言する
   return (
