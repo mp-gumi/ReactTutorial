@@ -23,7 +23,6 @@ export const Tutorial = () => {
         <button onClick={() => setCount(count + 1)}>Push me!</button>
       </p>
       <p>You pushed {count} times!</p>
-      <input placeholder={"Your Name"} />
       <p>
         Please Follow me on　
         <a
@@ -34,12 +33,24 @@ export const Tutorial = () => {
           Twitter!
         </a>
       </p>
+      <ul>
+        My Favorite
+        <li>謎解き</li>
+        <li>脱出ゲーム</li>
+        <li>昆虫</li>
+        <li>麻雀</li>
+      </ul>
       <img
         onClick={toggleLight}
         src="https://2.bp.blogspot.com/-QpIzYIhX_R0/VrN1H-ENQYI/AAAAAAAA3xU/v8lJEBoRMGA/s800/denkyuu_on.png"
         alt={"light_bulb"}
         width={"200px"}
       />
+
+      <p style={{ color: lightOn }}>
+        <input placeholder={"Find Answer"} />
+        Push upper button 5 times.
+      </p>
     </div>
   );
 };
