@@ -3,6 +3,7 @@ import React, { useState } from "react";
 export const Tutorial = () => {
   const [count, setCount] = useState(0);
   //useStateは、クラスや関数内で宣言する
+
   return (
     <div className="Tutorial">
       <h1>My Profile</h1>
@@ -21,6 +22,11 @@ export const Tutorial = () => {
           Twitter!
         </a>
       </p>
+      <img
+        src="https://1.bp.blogspot.com/-uo_TRiIGFsQ/X9lJhr3IuFI/AAAAAAABc6M/u2rxPd_7ED4mhwmywANaBAbe0RisJ-9pwCNcBGAsYHQ/s608/money_kinbut.png"
+        alt={"money-pig"}
+        width={"200px"}
+      />
     </div>
   );
 };
