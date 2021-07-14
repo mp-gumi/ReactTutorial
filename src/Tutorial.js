@@ -4,12 +4,23 @@ export const Tutorial = () => {
   const [count, setCount] = useState(0);
   //useStateは、クラスや関数内で宣言する
   return (
-    <div>
+    <div className="Tutorial">
+      <h1>My Profile</h1>
       <p>
         <button onClick={() => setCount(count + 1)}>Push me!</button>
-        You pushed {count} times!
       </p>
-      <input placeholder={"Your Name"}></input>
+      <p>You pushed {count} times!</p>
+      <input placeholder={"Your Name"} />
+      <p>
+        Please Follow me on
+        <a
+          href={"https://twitter.com/mp_gumi"}
+          target="_blank" //リンクを別タブで開く
+          rel="noopener noreferrer" //タブを開いたあとに、リンク先から参照できないようにする
+        >
+          Twitter!
+        </a>
+      </p>
     </div>
   );
 };
