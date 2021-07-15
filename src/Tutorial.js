@@ -54,21 +54,12 @@ export const Tutorial = () => {
 
   return (
     <div className="Tutorial" style={divStyle}>
-      <h1>My Profile</h1>
+      <h1>Find Answer!</h1>
       <p>
         <button onClick={() => setCount(count + 1)}>Push me!</button>
       </p>
       <p>You pushed {count} times!</p>
-      <p>
-        Please Follow me on{" "}
-        <a
-          href={"https://twitter.com/mp_gumi"}
-          target="_blank" //リンクを別タブで開く
-          rel="noopener noreferrer" //タブを開いたあとに、リンク先から参照できないようにする
-        >
-          Twitter!
-        </a>
-      </p>
+
       <ul>
         My Favorite
         <li>謎解き</li>
@@ -78,7 +69,7 @@ export const Tutorial = () => {
       <p style={{ color: lightOn }}>
         <form onSubmit={answerCheck}>
           <input
-            placeholder={"Find Answer"}
+            placeholder={"Input Answer"}
             onChange={handleChange}
             value={insect}
           />
@@ -91,6 +82,17 @@ export const Tutorial = () => {
         alt={"light_bulb"}
         width={"100px"}
       />
+      <br />
+      <p>
+        Please Follow me on{" "}
+        <a
+          href={"https://twitter.com/mp_gumi"}
+          target="_blank" //リンクを別タブで開く
+          rel="noopener noreferrer" //タブを開いたあとに、リンク先から参照できないようにする(セキュリティ上の観点)
+        >
+          Twitter!
+        </a>
+      </p>
     </div>
   );
 };
