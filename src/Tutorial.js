@@ -18,7 +18,11 @@ export const Tutorial = () => {
   const lightOn = "#FFFF48";
   const lightOff = "#000000";
   const [light, setLight] = useState(lightOn);
-  const divStyle = { backgroundColor: light };
+  const divStyle = {
+    backgroundColor: light,
+    textAlign: "center",
+    fontFamily: "Cantarell", //できていなさそう
+  };
   function toggleLight() {
     if (light === lightOn) {
       setLight(lightOff);
@@ -46,9 +50,9 @@ export const Tutorial = () => {
     if (insect === "") {
       alert("Your answer is empty.");
     } else if (insect.toUpperCase() === "INSECT") {
-      alert(`Congratulations! ${insect.toUpperCase()} is the correct answer!`);
+      alert(`Congratulations! 'INSECT' is the correct answer!`);
     } else {
-      alert(`${insect} is wrong answer.`);
+      alert(`'${insect}' is wrong answer. Please find the correct one.`);
     }
   };
 
@@ -58,21 +62,15 @@ export const Tutorial = () => {
       <p>
         <button onClick={() => setCount(count + 1)}>Push me!</button>
       </p>
-      <p>You pushed {count} times!</p>
+      <p>You pushed {count} times</p>
       <br />
       <h4>My Favorite</h4>
-      <ul>
-        <li>謎解き</li>
-        <li>昆虫</li>
-        <li>麻雀</li>
-      </ul>
+      Riddle <br />
+      Insects <br />
+      Majhong <br />
       <p style={{ color: lightOn }}>
         <form onSubmit={answerCheck}>
-          <input
-            placeholder={"Input Answer"}
-            onChange={handleChange}
-            value={insect}
-          />
+          <input placeholder={"Input Answer"} onChange={handleChange} />
         </form>
         {countCheck()}
       </p>
