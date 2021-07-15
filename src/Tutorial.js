@@ -59,9 +59,9 @@ export const Tutorial = () => {
         <button onClick={() => setCount(count + 1)}>Push me!</button>
       </p>
       <p>You pushed {count} times!</p>
-
+      <br />
+      <h4>My Favorite</h4>
       <ul>
-        My Favorite
         <li>謎解き</li>
         <li>昆虫</li>
         <li>麻雀</li>
