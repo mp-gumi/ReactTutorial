@@ -5,12 +5,12 @@ export const Tutorial = () => {
   const [count, setCount] = useState(0);
 
   //ボタンのクリック回数が5以上のときに表示する内容を変化させる
-  function countCheck(count) {
+  function countCheck() {
     let returnText;
-    if (count < 5) {
-      returnText = "Push upper button 5 times.";
+    if (count < 10) {
+      returnText = "Push button 10 times or more.";
     } else {
-      returnText = 'The answer is "WATER".';
+      returnText = 'The answer is "INSECT".';
     }
     return returnText;
   }
@@ -36,6 +36,21 @@ export const Tutorial = () => {
     srcLight =
       "https://2.bp.blogspot.com/-bB1KTaBEAm0/VrN1H-lrLFI/AAAAAAAA3xQ/2HKUMC-7kGw/s800/denkyuu_off.png";
   }
+  //解答の入力内容をinsectにセット、テキストボックスが入力されたときにこの関数を呼び出し(onChange)
+  const [insect, setInsect] = useState("");
+  const handleChange = ({ target }) => {
+    setInsect(target.value);
+  };
+  //解答が正しいかをチェック、Enterでsubmitされた際にこの関数を呼び出し(onSubmit)
+  const answerCheck = () => {
+    if (insect === "") {
+      alert("Your answer is empty.");
+    } else if (insect.toUpperCase() === "INSECT") {
+      alert(`Congratulations! ${insect.toUpperCase()} is the correct answer!`);
+    } else {
+      alert(`${insect} is wrong answer.`);
+    }
+  };
 
   return (
     <div className="Tutorial" style={divStyle}>
@@ -45,7 +60,7 @@ export const Tutorial = () => {
       </p>
       <p>You pushed {count} times!</p>
       <p>
-        Please Follow me on　
+        Please Follow me on{" "}
         <a
           href={"https://twitter.com/mp_gumi"}
           target="_blank" //リンクを別タブで開く
@@ -57,21 +72,25 @@ export const Tutorial = () => {
       <ul>
         My Favorite
         <li>謎解き</li>
-        <li>脱出ゲーム</li>
         <li>昆虫</li>
         <li>麻雀</li>
       </ul>
+      <p style={{ color: lightOn }}>
+        <form onSubmit={answerCheck}>
+          <input
+            placeholder={"Find Answer"}
+            onChange={handleChange}
+            value={insect}
+          />
+        </form>
+        {countCheck()}
+      </p>
       <img
         onClick={toggleLight}
         src={srcLight}
         alt={"light_bulb"}
         width={"100px"}
       />
-
-      <p style={{ color: lightOn }}>
-        <input placeholder={"Find Answer"} />
-        {countCheck()}
-      </p>
     </div>
   );
 };
