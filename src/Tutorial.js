@@ -5,7 +5,7 @@ export const Tutorial = () => {
   //useStateは、クラスや関数内で宣言する
   const [count, setCount] = useState(0);
 
-  //ボタンのクリック回数が5以上のときに表示する内容を変化させる
+  //ボタンのクリック回数が10以上のときに表示する内容を変化させる
   const countCheck = () => {
     if (count < 10) {
       return "Push button 10 times or more.";
@@ -14,25 +14,23 @@ export const Tutorial = () => {
   };
   //色の設定とオンオフ設定
   const [light, setLight] = useState(true);
-  const lightColor = light ? "#FFFF48" : "#000000";
   const toggleLight = () => {
     setLight(!light);
   };
+  const lightColor = light ? "#FFFF48" : "#000000";
 
   const divStyle = {
     backgroundColor: lightColor,
-    fontFamily: "Montserrat", //できた、ボタンやplaceholderの文字は変わらない
+    fontFamily: "Montserrat", //できた、ボタンやplaceholder内の文字は変わらない
   };
 
   //電気のオンオフで表示する画像を変更
-  let srcLight;
-  if (light) {
-    srcLight =
-      "https://2.bp.blogspot.com/-QpIzYIhX_R0/VrN1H-ENQYI/AAAAAAAA3xU/v8lJEBoRMGA/s800/denkyuu_on.png";
-  } else {
-    srcLight =
-      "https://2.bp.blogspot.com/-bB1KTaBEAm0/VrN1H-lrLFI/AAAAAAAA3xQ/2HKUMC-7kGw/s800/denkyuu_off.png";
-  }
+  const srcLightOn =
+    "https://2.bp.blogspot.com/-QpIzYIhX_R0/VrN1H-ENQYI/AAAAAAAA3xU/v8lJEBoRMGA/s800/denkyuu_on.png";
+  const srcLightOff =
+    "https://2.bp.blogspot.com/-bB1KTaBEAm0/VrN1H-lrLFI/AAAAAAAA3xQ/2HKUMC-7kGw/s800/denkyuu_off.png";
+  const srcLight = light ? srcLightOn : srcLightOff;
+
   //解答の入力内容をinsectにセット、テキストボックスが入力されたときにこの関数を呼び出し(onChange)
   const [answer, setAnswer] = useState("");
   const handleChange = ({ target }) => {
@@ -47,6 +45,19 @@ export const Tutorial = () => {
     }
   };
 
+  //好きなものに英語版のwikipediaのリンクを貼り、表示
+  const faves = ["Riddle", "Insects", "Mahjong"];
+  const favesWiki = faves.map((fave) => (
+    <a
+      href={"https://en.wikipedia.org/wiki/" + fave}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {fave}
+      <br />
+    </a>
+  ));
+
   return (
     <div className="Tutorial" style={divStyle}>
       <h1>Find Answer in This Page!</h1>
@@ -57,9 +68,7 @@ export const Tutorial = () => {
       </p>
       <b>My Favorite</b>
       <br />
-      Riddle <br />
-      Insects <br />
-      Mahjong <br />
+      {favesWiki}
       <p style={{ color: "#FFFF48" }}>
         <form onSubmit={answerCheck}>
           <input
