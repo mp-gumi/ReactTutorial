@@ -48,14 +48,18 @@ export const Tutorial = () => {
   //好きなものに英語版のwikipediaのリンクを貼り、表示
   const faves = ["Riddle", "Insects", "Mahjong"];
   const favesWiki = faves.map((fave) => (
-    <a
-      href={"https://en.wikipedia.org/wiki/" + fave}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <p>
       {fave}
-      <br />
-    </a>
+      <a
+        href={"https://en.wikipedia.org/wiki/" + fave}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <sub style={{ fontSize: "10px" }}>[wiki]</sub>
+
+        <br />
+      </a>
+    </p>
   ));
 
   return (
