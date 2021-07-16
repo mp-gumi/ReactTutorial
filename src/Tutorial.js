@@ -47,9 +47,7 @@ export const Tutorial = () => {
   };
   //解答が正しいかをチェック、Enterでsubmitされた際にこの関数を呼び出し(onSubmit)
   const answerCheck = () => {
-    if (insect === "") {
-      alert("Your answer is empty.");
-    } else if (insect.toUpperCase() === "INSECT") {
+    if (insect.toUpperCase() === "INSECT") {
       alert(`Congratulations! 'INSECT' is the correct answer!`);
     } else {
       alert(`'${insect}' is wrong answer. Please find the correct one.`);
@@ -62,7 +60,7 @@ export const Tutorial = () => {
       <p>
         <button onClick={() => setCount(count + 1)}>Push me!</button>
       </p>
-      <p>You pushed {count} times</p>
+      <p>[You pushed {count} times]</p>
       <br />
       <h4>My Favorite</h4>
       Riddle <br />
@@ -71,6 +69,9 @@ export const Tutorial = () => {
       <p style={{ color: lightOn }}>
         <form onSubmit={answerCheck}>
           <input placeholder={"Input Answer"} onChange={handleChange} />
+          <button type="submit" disabled={insect === ""}>
+            Check
+          </button>
         </form>
         {countCheck()}
       </p>
