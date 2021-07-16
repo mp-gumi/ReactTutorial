@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./index.css";
 
 export const Tutorial = () => {
   //useStateは、クラスや関数内で宣言する
@@ -6,13 +7,10 @@ export const Tutorial = () => {
 
   //ボタンのクリック回数が5以上のときに表示する内容を変化させる
   function countCheck() {
-    let returnText;
     if (count < 10) {
-      returnText = "Push button 10 times or more.";
-    } else {
-      returnText = 'The answer is "INSECT".';
+      return "Push button 10 times or more.";
     }
-    return returnText;
+    return 'The answer is "INSECT".'; //早期リターン
   }
   //色の設定とオンオフ設定
   const lightOn = "#FFFF48";
@@ -20,8 +18,7 @@ export const Tutorial = () => {
   const [light, setLight] = useState(lightOn);
   const divStyle = {
     backgroundColor: light,
-    textAlign: "center",
-    fontFamily: "Cantarell", //できていなさそう
+    fontFamily: "Montserrat", //できた、ボタンやplaceholderの文字は変わらない
   };
   function toggleLight() {
     if (light === lightOn) {
@@ -56,19 +53,24 @@ export const Tutorial = () => {
 
   return (
     <div className="Tutorial" style={divStyle}>
-      <h1>Find Answer!</h1>
+      <h1>Find Answer in This Page!</h1>
       <p>
         <button onClick={() => setCount(count + 1)}>Push me!</button>
+        <br />
+        [You pushed {count} times]
       </p>
-      <p>[You pushed {count} times]</p>
+      <b>My Favorite</b>
       <br />
-      <h4>My Favorite</h4>
       Riddle <br />
       Insects <br />
       Majhong <br />
       <p style={{ color: lightOn }}>
         <form onSubmit={answerCheck}>
-          <input placeholder={"Input Answer"} onChange={handleChange} />
+          <input
+            placeholder={"Input Answer"}
+            onChange={handleChange}
+            value={insect}
+          />
           <button type="submit" disabled={insect === ""}>
             Check
           </button>
@@ -83,7 +85,7 @@ export const Tutorial = () => {
       />
       <br />
       <p>
-        Please Follow me on{" "}
+        Please Follow Me on{" "}
         <a
           href={"https://twitter.com/mp_gumi"}
           target="_blank" //リンクを別タブで開く
