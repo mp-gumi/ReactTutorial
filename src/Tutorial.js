@@ -13,24 +13,20 @@ export const Tutorial = () => {
     return 'The answer is "INSECT".'; //早期リターン
   };
   //色の設定とオンオフ設定
-  const lightOn = "#FFFF48";
-  const lightOff = "#000000";
-  const [light, setLight] = useState(lightOn);
-  const divStyle = {
-    backgroundColor: light,
-    fontFamily: "Montserrat", //できた、ボタンやplaceholderの文字は変わらない
-  };
+  const [light, setLight] = useState(true);
+  const lightColor = light ? "#FFFF48" : "#000000";
   const toggleLight = () => {
-    if (light === lightOn) {
-      setLight(lightOff);
-    } else {
-      setLight(lightOn);
-    }
+    setLight(!light);
+  };
+
+  const divStyle = {
+    backgroundColor: lightColor,
+    fontFamily: "Montserrat", //できた、ボタンやplaceholderの文字は変わらない
   };
 
   //電気のオンオフで表示する画像を変更
   let srcLight;
-  if (light === lightOn) {
+  if (light) {
     srcLight =
       "https://2.bp.blogspot.com/-QpIzYIhX_R0/VrN1H-ENQYI/AAAAAAAA3xU/v8lJEBoRMGA/s800/denkyuu_on.png";
   } else {
@@ -38,16 +34,16 @@ export const Tutorial = () => {
       "https://2.bp.blogspot.com/-bB1KTaBEAm0/VrN1H-lrLFI/AAAAAAAA3xQ/2HKUMC-7kGw/s800/denkyuu_off.png";
   }
   //解答の入力内容をinsectにセット、テキストボックスが入力されたときにこの関数を呼び出し(onChange)
-  const [insect, setInsect] = useState("");
+  const [answer, setAnswer] = useState("");
   const handleChange = ({ target }) => {
-    setInsect(target.value);
+    setAnswer(target.value);
   };
   //解答が正しいかをチェック、Enterでsubmitされた際にこの関数を呼び出し(onSubmit)
   const answerCheck = () => {
-    if (insect.toUpperCase() === "INSECT") {
+    if (answer.toUpperCase() === "INSECT") {
       alert(`Congratulations! 'INSECT' is the correct answer!`);
     } else {
-      alert(`'${insect}' is wrong answer. Please find the correct one.`);
+      alert(`'${answer}' is wrong answer. Please find the correct one.`);
     }
   };
 
@@ -64,14 +60,14 @@ export const Tutorial = () => {
       Riddle <br />
       Insects <br />
       Mahjong <br />
-      <p style={{ color: lightOn }}>
+      <p style={{ color: "#FFFF48" }}>
         <form onSubmit={answerCheck}>
           <input
             placeholder={"Input Answer"}
             onChange={handleChange}
-            value={insect}
+            value={answer}
           />
-          <button type="submit" disabled={insect === ""}>
+          <button type="submit" disabled={answer === ""}>
             Check
           </button>
         </form>
