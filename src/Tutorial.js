@@ -6,12 +6,12 @@ export const Tutorial = () => {
   const [count, setCount] = useState(0);
 
   //ボタンのクリック回数が5以上のときに表示する内容を変化させる
-  function countCheck() {
+  const countCheck = () => {
     if (count < 10) {
       return "Push button 10 times or more.";
     }
     return 'The answer is "INSECT".'; //早期リターン
-  }
+  };
   //色の設定とオンオフ設定
   const lightOn = "#FFFF48";
   const lightOff = "#000000";
@@ -20,13 +20,13 @@ export const Tutorial = () => {
     backgroundColor: light,
     fontFamily: "Montserrat", //できた、ボタンやplaceholderの文字は変わらない
   };
-  function toggleLight() {
+  const toggleLight = () => {
     if (light === lightOn) {
       setLight(lightOff);
     } else {
       setLight(lightOn);
     }
-  }
+  };
 
   //電気のオンオフで表示する画像を変更
   let srcLight;
@@ -63,7 +63,7 @@ export const Tutorial = () => {
       <br />
       Riddle <br />
       Insects <br />
-      Majhong <br />
+      Mahjong <br />
       <p style={{ color: lightOn }}>
         <form onSubmit={answerCheck}>
           <input
