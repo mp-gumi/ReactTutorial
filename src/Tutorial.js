@@ -87,6 +87,7 @@ export const Tutorial = () => {
         {hintText()}
       </p>
       <img
+        className={"lightImg"}
         onClick={toggleLight}
         src={srcLight}
         alt={"light_bulb"}
