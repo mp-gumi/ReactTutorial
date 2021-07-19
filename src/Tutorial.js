@@ -17,7 +17,7 @@ export const Tutorial = () => {
   const toggleLight = () => {
     setLight(!light);
   };
-  const lightColor = light ? "#FFFF48" : "#000000";
+  const lightColor = light ? "#FFFF48" : "#000060";
 
   const divStyle = {
     backgroundColor: lightColor,
