@@ -21,7 +21,7 @@ export const Tutorial = () => {
 
   const divStyle = {
     backgroundColor: lightColor,
-    fontFamily: "Montserrat", //できた、ボタンやplaceholder内の文字は変わらない
+    fontFamily: "Montserrat", //できた。 ボタンやplaceholder内の文字は変わらない
   };
 
   //電気のオンオフで表示する画像を変更
@@ -31,7 +31,7 @@ export const Tutorial = () => {
     "https://2.bp.blogspot.com/-bB1KTaBEAm0/VrN1H-lrLFI/AAAAAAAA3xQ/2HKUMC-7kGw/s800/denkyuu_off.png";
   const srcLight = light ? srcLightOn : srcLightOff;
 
-  //解答の入力内容をinsectにセット、テキストボックスが入力されたときにこの関数を呼び出し(onChange)
+  //解答の入力内容をanswerにセット、テキストボックスが入力されたときにこの関数を呼び出し(onChange)
   const [answer, setAnswer] = useState("");
   const handleChange = ({ target }) => {
     setAnswer(target.value);
