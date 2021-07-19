@@ -7,16 +7,32 @@ import question3 from "./gallery/question3.png";
 import question4 from "./gallery/question4.png";
 
 export const Quiz = () => {
-  const [ans1, setAns1] = useState("");
-  const [ans2, setAns2] = useState("");
-  const [ans3, setAns3] = useState("");
-  const [ans4, setAns4] = useState("");
+  const [ans, setAns] = useState("");
+
+  const handleChange = ({ target }) => {
+    const { name, value } = target;
+    setAns((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const ansCheck = () => {
+    if (ans.Q1 === "白") {
+      alert("");
+    }
+  };
 
   return (
     <div>
-      <h1>第一問</h1>
+      <h1>Q1</h1>
       <img src={question1} alt={"question1"} />
-      <input placeholder="解答を入力してください" />
+      <input
+        placeholder="漢字１文字で解答"
+        name="Q1"
+        onChange={handleChange}
+        value={ans.Q1 || ""}
+      />
       <button type="submit">Check</button>
     </div>
   );
