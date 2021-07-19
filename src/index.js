@@ -2,13 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import { Tutorial } from "./Tutorial";
-//import { Quiz } from "./quiz";
+//import { Tutorial } from "./Tutorial";
+import { Quiz } from "./Quiz";
 //import { Popup } from "./Popup";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Tutorial />
+    <Quiz />
   </React.StrictMode>,
   document.getElementById("root")
 );
