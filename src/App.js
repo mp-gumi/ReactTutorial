@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./index.css";
 
-import { Tutorial } from "./component/Tutorial";
+import { Title } from "./component/Tutorial";
 import { PushMe } from "./component/Tutorial/PushMe";
 
 export const App = () => {
@@ -67,7 +67,7 @@ export const App = () => {
 
   return (
     <div className="Tutorial" style={divStyle}>
-      <Tutorial />
+      <Title />
       <PushMe />
 
       {/*<h1>Find Answer in This Page!</h1>*/}
@@ -78,7 +78,7 @@ export const App = () => {
       {/*</p>*/}
       <b>My Favorite</b>
       <br />
-      {favesWiki}
+      {/*{favesWiki}*/}
       <p style={{ color: "#FFFF48" }}>
         <form onSubmit={answerCheck}>
           <input
