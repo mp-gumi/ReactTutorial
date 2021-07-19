@@ -1,5 +1,9 @@
 import React from "react";
 
 export const Title = () => {
-    return <div>Title</div>
-}
+  return (
+    <div>
+      <h1>Find Answer in This Page！</h1>
+    </div>
+  );
+};

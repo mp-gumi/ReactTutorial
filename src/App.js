@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import "./index.css";
 
 import { Tutorial } from "./component/Tutorial";
+import { PushMe } from "./component/Tutorial/PushMe";
 
 export const App = () => {
   //useStateは、クラスや関数内で宣言する
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
 
   //ボタンのクリック回数が10以上のときに表示する内容を変化させる
   const hintText = () => {
@@ -48,34 +49,33 @@ export const App = () => {
   };
 
   //好きなものに英語版のwikipediaのリンクを貼り、表示
-  const faves = ["Riddle", "Insects", "Mahjong"];
-  const favesWiki = faves.map((fave) => (
-    <p>
-      {fave}
-      <a
-        href={"https://en.wikipedia.org/wiki/" + fave}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <sub style={{ fontSize: "10px" }}>[wiki]</sub>
-
-        <br />
-      </a>
-    </p>
-  ));
+  // const faves = ["Riddle", "Insects", "Mahjong"];
+  // const favesWiki = faves.map((fave) => (
+  //   <p>
+  //     {fave}
+  //     <a
+  //       href={"https://en.wikipedia.org/wiki/" + fave}
+  //       target="_blank"
+  //       rel="noopener noreferrer"
+  //     >
+  //       <sub style={{ fontSize: "10px" }}>[wiki]</sub>
+  //
+  //       <br />
+  //     </a>
+  //   </p>
+  // ));
 
   return (
     <div className="Tutorial" style={divStyle}>
-      {/*無理やり足した*/}
       <Tutorial />
-      {/*無理やり足した終わり*/}
+      <PushMe />
 
-      <h1>Find Answer in This Page!</h1>
-      <p>
-        <button onClick={() => setCount(count + 1)}>Push me!</button>
-        <br />
-        [You pushed {count} times]
-      </p>
+      {/*<h1>Find Answer in This Page!</h1>*/}
+      {/*<p>*/}
+      {/*  <button onClick={() => setCount(count + 1)}>Push me!</button>*/}
+      {/*  <br />*/}
+      {/*  [You pushed {count} times]*/}
+      {/*</p>*/}
       <b>My Favorite</b>
       <br />
       {favesWiki}
