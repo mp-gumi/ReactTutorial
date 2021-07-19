@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./index.css";
 
-import { Title } from "./component/Tutorial";
+import { Tutorial } from "./component/Tutorial";
 import { PushMe } from "./component/Tutorial/PushMe";
 
 export const App = () => {
@@ -67,8 +67,7 @@ export const App = () => {
 
   return (
     <div className="Tutorial" style={divStyle}>
-      <Title />
-      <PushMe />
+      <Tutorial />
 
       {/*<h1>Find Answer in This Page!</h1>*/}
       {/*<p>*/}
