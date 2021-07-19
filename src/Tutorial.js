@@ -6,7 +6,7 @@ export const Tutorial = () => {
   const [count, setCount] = useState(0);
 
   //ボタンのクリック回数が10以上のときに表示する内容を変化させる
-  const countCheck = () => {
+  const hintText = () => {
     if (count < 10) {
       return "Push button 10 times or more.";
     }
@@ -84,7 +84,7 @@ export const Tutorial = () => {
             Check
           </button>
         </form>
-        {countCheck()}
+        {hintText()}
       </p>
       <img
         onClick={toggleLight}
