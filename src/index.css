@@ -4,6 +4,10 @@
   text-align: center;
 }
 
+.lightImg {
+  cursor: pointer;
+}
+
 .Quiz {
   text-align: center;
   background-color: #c1ffff;
